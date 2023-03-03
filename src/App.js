@@ -11,7 +11,9 @@ export default function App() {
   return (
     <Router>
         <Routes>
-          <Route path="/:regNo/:name" element={<CardPreview />} />
+          <Route path="/" element={<CardPreview />}>
+            <Route path='christ/:regNo/:name'></Route>
+          </Route>
         </Routes>
     </Router>
   );
