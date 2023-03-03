@@ -11,19 +11,20 @@ export default function App() {
   return (
     <Router>
         <Routes>
-          <Route path="/:regNo" element={<CardPreview />} />
+          <Route path="/:regNo/:name" element={<CardPreview />} />
         </Routes>
     </Router>
   );
 }
 
 function CardPreview() {
-  let { regNo } = useParams();
+  let { regNo, name } = useParams();
   return (
     <div className='wrapper'>
       <img src={bg} className="bg-image" alt="logo" />
       <div className='text-content'>
         <div className='reg-no'>{regNo}</div>
+        <div className='name'>{name}</div>
       </div>
     </div>
   );
