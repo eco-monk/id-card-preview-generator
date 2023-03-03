@@ -1,5 +1,5 @@
 # publish build from root
-git subtree push --prefix src/build origin gh-pages
+npm run deploy
 
 # Getting Started with Create React App
 
