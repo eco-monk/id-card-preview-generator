@@ -1,0 +1,28 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.bg-image {
+  display: block;
+  max-width:250px;
+  max-height:800px;
+  width: auto;
+  height: auto;
+}
+
+.text-content {
+  position: absolute;
+  width: 250px;
+}
+
+.text-content > div {
+  position: absolute;
+}
+
+.reg-no {
+  top: 246px;
+  left: 78px;
+  font-size: 14px;
+}
