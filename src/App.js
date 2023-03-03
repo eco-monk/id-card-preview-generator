@@ -1,7 +1,7 @@
 import bg from './MBA1_01.jpg';
 import './App.css';
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Routes,
   Route,
   useParams
