@@ -27,6 +27,7 @@ function CardPreview() {
       <div className='text-content'>
         <div className='reg-no'>{regNo}</div>
         <div className='name'>{name}</div>
+        <img src='file:///Users/anandsrinivasan/Desktop/pp-size.jpeg' width="100px" height="100px" />
       </div>
     </div>
   );
