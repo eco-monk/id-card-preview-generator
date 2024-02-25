@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
+import "./index.css";
 
-export function CardPreview() {
+export function ChristPreview() {
     let { institution, regNo, name, course, validity, dob, blood, address, mobile } = useParams();
     return (
       <div className='wrapper'>

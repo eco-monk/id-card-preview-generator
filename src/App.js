@@ -3,7 +3,7 @@ import {
   RouterProvider,
   createHashRouter
 } from "react-router-dom";
-import { CardPreview } from './christ';
+import { ChristPreview } from './christ';
 
 export default function App() {
 
@@ -22,7 +22,7 @@ export default function App() {
       https://eco-monk.github.io/id-card-preview-generator/#/home/christ/2/Deepa/B.E.%20(CSE)/01-06-2028/23-04-1998/B+/23, Behind Leela palace, Bangalore/7876876887
       */
       path: "home/:institution/:regNo/:name/:course/:validity/:dob/:blood/:address/:mobile",
-      element: <CardPreview />,
+      element: <ChristPreview />,
     },
   ]);
 
