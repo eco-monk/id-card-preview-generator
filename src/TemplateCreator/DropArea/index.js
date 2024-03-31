@@ -1,27 +1,23 @@
 import { useDrop } from 'react-dnd'
 import { useRef } from 'react'
 import { ItemTypes } from '../Meta/ItemTypes';
-const style = {
-  height: '12rem',
-  width: '12rem',
-  marginRight: '1.5rem',
-  marginBottom: '1.5rem',
-  color: 'white',
-  padding: '1rem',
-  textAlign: 'center',
-  fontSize: '1rem',
-  lineHeight: 'normal',
-  float: 'left',
-}
-export const DropArea = () => {
+import { view } from '@risingstack/react-easy-state';
+import { globalStore } from '../Store';
+import "./index.css";
+
+export const DropArea = view(() => {
     const boundingBox = useRef(null);
-    const [{ canDrop, isOver }, drop_ref] = useDrop(() => ({
+    const [, drop_ref] = useDrop(() => ({
         accept: ItemTypes.TextField,
         drop: (item, monitor) => {
             const offset = monitor.getClientOffset();
             const deltaX = offset.x - boundingBox.current.x
             const deltaY = offset.y - boundingBox.current.y
             console.log("deltaX = " + deltaX + ", deltaY = " + deltaY)
+            globalStore.addElement({
+                left: deltaX + "px",
+                top: deltaY + "px"
+            });
             return { name: 'Dustbin' };
         },
         collect: (monitor) => ({
@@ -29,13 +25,6 @@ export const DropArea = () => {
         canDrop: monitor.canDrop(),
         }),
     }))
-    const isActive = canDrop && isOver
-    let backgroundColor = '#222'
-    if (isActive) {
-        backgroundColor = 'darkgreen'
-    } else if (canDrop) {
-        backgroundColor = 'darkkhaki'
-    }
 
     function combinedRef(el) {
         drop_ref(el);
@@ -43,9 +32,21 @@ export const DropArea = () => {
             boundingBox.current = el.getBoundingClientRect();
         }
     }
+
     return (
-        <div ref={combinedRef} style={{ ...style, backgroundColor }} data-testid="dustbin">
-            {isActive ? 'Release to drop' : 'Drag a box here'}
+        <div className='drop-wrapper'>
+            <div ref={combinedRef} className='dnd' data-testid="dustbin"></div>
+            <div className='render-div'>
+                {globalStore.elements?.map((el, idx) => {
+                    return <div key={idx} style={ {
+                        position: 'absolute',
+                        left: el.left,
+                        top: el.top
+                    }}>text</div>
+                })}
+            </div>
         </div>
+        
+
     )
-}
+})
