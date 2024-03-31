@@ -3,6 +3,10 @@
     display: flex;
     justify-content: center;
   }
+
+.wrapper > div {
+  padding-left: 5px;
+}
   
   .bg-image {
     display: block;
