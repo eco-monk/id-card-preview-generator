@@ -10,10 +10,10 @@ const style = {
   marginBottom: '1.5rem',
   cursor: 'move',
 }
-export const DropItem = function Box({ name }) {
+export const DropItem = function Box({ name, styleConfig, id }) {
   const [{ isDragging }, drag] = useDrag(() => ({
     type: ItemTypes.TextField,
-    item: { name },
+    item: { name, id },
     end: (item, monitor) => {
       const dropResult = monitor.getDropResult()
       if (item && dropResult) {
@@ -27,7 +27,7 @@ export const DropItem = function Box({ name }) {
   }))
   const opacity = isDragging ? 0.4 : 1
   return (
-    <div ref={drag} style={{ ...style, opacity }} data-testid={`box`}>
+    <div ref={drag} style={{ ...style, ...styleConfig, opacity }} data-testid={`box`}>
       {name}
     </div>
   )

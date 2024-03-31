@@ -11,6 +11,6 @@ import { store } from 'react-easy-state'
 // }
 
 export const globalStore = store({ 
-    elements: [], 
-    addElement: (el) => globalStore.elements.push(el) 
+    elements: {}, 
+    addElement: (el) => { globalStore.elements[el.id] = el },
 });
