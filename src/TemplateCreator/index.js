@@ -9,7 +9,7 @@ export function TemplateCreator() {
     // let { institute } = useParams();
     return (
     <DndProvider backend={HTML5Backend}>
-        <div className="wrapper">
+        <div className="template-wrapper">
             {/* <div id="drop-area">
                 <img src={`./media/christ/bg.jpg`} className="bg-image" alt="bg" />
             </div>
