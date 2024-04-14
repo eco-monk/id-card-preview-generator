@@ -1,19 +1,17 @@
 .drop-wrapper {
-    width: 500px;
-    height: 500px;
+    display: flex;
 
-    .dnd {
-        z-index: 1;
-        position: absolute;
-        width: 500px;
-        height: 500px;
+    .bg-image {
+        max-width:250px;
+        max-height:800px;
+        width: auto;
+        height: auto;
     }
-    
-    .render-div {
+
+    .dnd-div {
         position: absolute;
-        width: 500px;
-        height: 500px;
-        background-color: black;
-        color: white;
+        width: 250px;
+        height: 800px;
+        background-color: rgba(0, 0, 0, 0);
     }
 }

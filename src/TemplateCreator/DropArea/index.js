@@ -39,9 +39,8 @@ export const DropArea = view(({ imageUrl }) => {
 
     return (
         <div className='drop-wrapper'>
-            {/* <div  className='dnd' data-testid="dustbin"></div> */}
             <img src={imageUrl} className='bg-image' alt="bg"/>
-            <div ref={combinedRef} className='render-div' data-testid="dustbin">
+            <div ref={combinedRef} className='dnd-div' data-testid="dustbin">
                 {Object.keys(globalStore.elements)?.map((key) => {
                     return <DropItem name="text" key={key} id ={key} styleConfig={{
                         position: 'absolute',

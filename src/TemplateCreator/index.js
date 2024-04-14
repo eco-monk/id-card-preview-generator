@@ -10,12 +10,6 @@ export function TemplateCreator() {
     return (
     <DndProvider backend={HTML5Backend}>
         <div className="template-wrapper">
-            {/* <div id="drop-area">
-                <img src={`./media/christ/bg.jpg`} className="bg-image" alt="bg" />
-            </div>
-            <div id="drag-items">
-
-            </div> */}
             <DropItem name="text" styleConfig={{
                 width: "100px",
                 height: "30px",
