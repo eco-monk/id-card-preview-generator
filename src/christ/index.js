@@ -1,10 +1,10 @@
 import { useParams } from "react-router-dom";
-import "./index.css";
+import "./index.scss";
 
 export function ChristPreview() {
     let { regNo, name, course, validity, dob, blood, address, mobile } = useParams();
     return (
-      <div className='wrapper'>
+      <div className='christ-wrapper'>
           <img src={`./media/christ/bg.jpg`} className="bg-image" alt="bg" />
           <div className='text-content'>
             <div className='reg-no'>{regNo}</div>

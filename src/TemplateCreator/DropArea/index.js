@@ -4,10 +4,10 @@ import { ItemTypes } from '../Meta/ItemTypes';
 import { view } from '@risingstack/react-easy-state';
 import { globalStore } from '../Store';
 import { v4 as uuidv4 } from 'uuid';
-import "./index.css";
+import "./index.scss";
 import { DropItem } from '../DropItem';
 
-export const DropArea = view(() => {
+export const DropArea = view(({ imageUrl }) => {
     const boundingBox = useRef(null);
     const [, drop_ref] = useDrop(() => ({
         accept: ItemTypes.TextField,
@@ -40,6 +40,7 @@ export const DropArea = view(() => {
     return (
         <div className='drop-wrapper'>
             {/* <div  className='dnd' data-testid="dustbin"></div> */}
+            <img src={imageUrl} className='bg-image' alt="bg"/>
             <div ref={combinedRef} className='render-div' data-testid="dustbin">
                 {Object.keys(globalStore.elements)?.map((key) => {
                     return <DropItem name="text" key={key} id ={key} styleConfig={{

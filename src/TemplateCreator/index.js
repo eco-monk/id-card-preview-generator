@@ -1,5 +1,5 @@
 // import { useParams } from "react-router-dom";
-import "./index.css";
+import "./index.scss";
 import { DropArea } from "./DropArea";
 import { DropItem } from "./DropItem";
 import { DndProvider } from "react-dnd";
@@ -22,11 +22,7 @@ export function TemplateCreator() {
                 border: '1px dashed gray',
                 backgroundColor: 'white',
             }}></DropItem>
-            <DropArea styleConfig={{
-                width: 'fit-content',
-                height: '100%',
-                backgroundImage: 'url("./media/christ/bg.jpg")'
-            }}></DropArea>
+            <DropArea imageUrl='./media/christ/bg.jpg'></DropArea>
         </div>
       </DndProvider>
     );
