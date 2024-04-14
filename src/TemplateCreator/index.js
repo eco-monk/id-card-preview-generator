@@ -16,8 +16,17 @@ export function TemplateCreator() {
             <div id="drag-items">
 
             </div> */}
-            <DropItem name="text"></DropItem>
-            <DropArea></DropArea>
+            <DropItem name="text" styleConfig={{
+                width: "100px",
+                height: "30px",
+                border: '1px dashed gray',
+                backgroundColor: 'white',
+            }}></DropItem>
+            <DropArea styleConfig={{
+                width: 'fit-content',
+                height: '100%',
+                backgroundImage: 'url("./media/christ/bg.jpg")'
+            }}></DropArea>
         </div>
       </DndProvider>
     );
